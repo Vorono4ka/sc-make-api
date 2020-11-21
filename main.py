@@ -56,7 +56,7 @@ def get_creation_list(page: int = 0,
     return get_json_from_server('/prod/CreationList', data)
 
 
-def get_creation(_id: int,
+def get_creation(_id: str,
                  language: str = 'en') -> dict:
     data = {
         'Id': _id,
@@ -69,6 +69,6 @@ def get_creation(_id: int,
 
 
 if __name__ == '__main__':
-    print(get_campaign_list())
-    print(get_creation_list(1, 8, [26]))
+    print(get_creation_list())
+    print(get_creation('kragale-krampus-gale'))
     # download('https://make.supercell.com/en/creation/kragale-krampus-gale')
