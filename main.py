@@ -2,7 +2,7 @@ import requests
 import json
 
 
-server_url = 'https://3c18w2n4l7.execute-api.us-east-1.amazonaws.com'
+server_url = 'https://oh14aups3g.execute-api.us-east-1.amazonaws.com/prod'
 
 
 def get_json_from_server(path: str,
@@ -19,7 +19,7 @@ def get_campaign_list(language: str = 'en') -> dict:
         'lang': language
     }
 
-    return get_json_from_server('/prod/CampaignList', data)
+    return get_json_from_server('/CampaignList', data)
 
 
 def get_campaign(_id: int,
@@ -29,7 +29,7 @@ def get_campaign(_id: int,
         'lang': language
     }
 
-    return get_json_from_server('/prod/CampaignGet', data)
+    return get_json_from_server('/CampaignGet', data)
 
 
 def get_creation_list(page: int = 0,
@@ -53,7 +53,7 @@ def get_creation_list(page: int = 0,
         'Winner': int(is_winner),
     }
 
-    return get_json_from_server('/prod/CreationList', data)
+    return get_json_from_server('/CreationList', data)
 
 
 def get_creation(_id: str,
@@ -65,7 +65,7 @@ def get_creation(_id: str,
         'lang': language,
     }
 
-    return get_json_from_server('/prod/CreationGet', data)
+    return get_json_from_server('/CreationGet', data)
 
 
 if __name__ == '__main__':
